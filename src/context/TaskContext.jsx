@@ -44,9 +44,10 @@ export function TaskContextProvider(props) {
             alert(`La tarea ${task.title} no existe.`)
             return
         }
-
-        tasks.splice(taskIndex, 1, task);
-        setTasks([...tasks]);
+        
+        const tasksCopy = [...tasks];
+        tasksCopy.splice(taskIndex, 1, task);
+        setTasks([...tasksCopy]);
     }
 
     const removeTask = (id) => {
